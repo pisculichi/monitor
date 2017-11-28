@@ -6,6 +6,7 @@ require '../classes/Request.php';
 require '../classes/Users.php';
 require '../classes/Process.php';
 require '../classes/Cases.php';
+require '../classes/Indicators.php';
 require '../classes/Task.php';
 require '../vendor/autoload.php';
 

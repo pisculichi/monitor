@@ -12,7 +12,7 @@ class Request {
         $response = array();
         $client = Access::getGuzzleClient();
         try {
-            //Si el método es POST, hago el request con un header con la variable de sesion			
+            //Si el mÃ©todo es POST, hago el request con un header con la variable de sesion			
 			if ($method == 'POST'){
                 $jar = new \GuzzleHttp\Cookie\CookieJar();
                 $request = $client->request($method, $uri,
