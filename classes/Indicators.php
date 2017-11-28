@@ -54,4 +54,21 @@ class Indicators {
         );
     }
 
+    public static function getPercentageOfCasesResolvedInAMonth(){
+        $response = Cases::getArchivedCases();
+        $cases = $response['data'];
+        $count = count($cases);
+        $countInMonth = 0;
+        foreach ($cases as $case){
+            $startDate = new DateTime($case->start);
+            $endDate = new DateTime($case->end_date);
+            $days = (int) $startDate->diff($endDate)->format('%a');
+            if ($days < 30)
+                $countInMonth++;
+        }
+        if ($count > 0)
+            return ($countInMonth/$count) * 100;
+        return 0;
+    }
+
 }
